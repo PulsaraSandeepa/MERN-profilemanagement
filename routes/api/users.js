@@ -26,7 +26,8 @@ router.get("/test", (req, res) =>
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/register", (req, res) => {
+router.post
+("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   //check validation
   if (!isValid) {
