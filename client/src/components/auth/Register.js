@@ -18,7 +18,7 @@ const Register = (props) => {
     if (props.auth.isAuthenticated) {
       props.history.push("/dashboard");
     }
-  });
+  },[props]);
 
   useEffect(() => {
     if (props.errors) {
@@ -52,12 +52,12 @@ const Register = (props) => {
   };
 
   const errors = state.errors;
-  //const { user } = props.auth;
+  const { user } = props.auth;
 
   return (
     <div>
       <div className="register">
-        {/* {user ? user.name : null} */}
+        {user ? user.name : null}
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">

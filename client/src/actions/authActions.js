@@ -18,7 +18,7 @@ export const registerUser = (userData, history) => (dispatch) => {
     );
 };
 
-//Login -Get user token
+//Login - Get user token
 export const loginUser = (userData) => (dispatch) => {
   axios
     .post("/api/users/login", userData)
@@ -52,7 +52,7 @@ export const setCurrentUser = (decoded) => {
 //log out user
 export const logoutUser = () => (dispatch) => {
   //remove token from loacal storage
-  localStorage.removeItem("[jwtToken");
+  localStorage.removeItem("jwtToken");
   //remove auth header for future requests
   setAuthToken(false);
 

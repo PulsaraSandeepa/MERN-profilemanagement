@@ -16,7 +16,7 @@ const Login = (props) => {
     if (props.auth.isAuthenticated) {
       props.history.push("/dashboard");
     }
-  });
+  },[]);
 
   useEffect(() => {
     if (props.auth.isAuthenticated) {
@@ -37,7 +37,7 @@ const Login = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const userData = {
+    const userData = { 
       email: state.email,
       password: state.password,
     };
@@ -46,7 +46,7 @@ const Login = (props) => {
     //console.log(loggedUser);
   };
 
-  const { errors } = state;
+  const { errors } = state;//destructure
 
   return (
     <div className="login">

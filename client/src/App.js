@@ -20,7 +20,7 @@ import Register from "../src/components/auth/Register";
 import store from "../src/store";
 
 if (localStorage.jwtToken) {
-  //set auth token headerr auth
+  //set auth token header auth
   setAuthToken(localStorage.jwtToken);
   //decode token and get user info and exp
   const decoded = jwt_decode(localStorage.jwtToken);
