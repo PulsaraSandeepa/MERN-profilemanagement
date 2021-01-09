@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { clearCurrentProfile } from "../../actions/profileActions";
 
 const Navbar = (props) => {
   const { isAuthenticated, user } = props.auth;
 
   const onLogoutClick = (e) => {
     e.preventDefault();
+    props.clearCurrentProfile();
     props.logoutUser();
   };
   const authLinks = (
@@ -83,4 +85,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { logoutUser })(Navbar);
+export default connect(mapStateToProps, { logoutUser,clearCurrentProfile })(Navbar);

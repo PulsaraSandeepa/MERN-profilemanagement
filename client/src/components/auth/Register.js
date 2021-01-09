@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import classnames from "classnames";
 import { connect } from "react-redux";
 //import the action we want to use
 import { registerUser } from "../../actions/authActions";
@@ -95,7 +94,6 @@ const Register = (props) => {
                   onChange={onChange}
                   error={errors.password}
                 />
-
 
                 <TextFieldGroup
                   name="password2"
