@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -19,6 +19,9 @@ import Login from "../src/components/auth/Login";
 import Register from "../src/components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import store from "../src/store";
+
+import PrivateRoute from "../src/components/common/PrivateRoute";
+
 import { clearCurrentProfile } from "./actions/profileActions";
 
 if (localStorage.jwtToken) {
@@ -53,7 +56,10 @@ function App() {
           <div className="container">
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
+            </Switch>
 
           </div>
           <Footer />
