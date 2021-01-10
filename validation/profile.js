@@ -15,7 +15,7 @@ module.exports = function validateProfileInput(data) {
     errors.status = "Status is required";
   }
   if (Validator.isEmpty(data.skills)) {
-    errors.skills = "Password is required";
+    errors.skills = "Skills are required";
   }
   if (!isEmpty(data.website)) {
     if (!Validator.isURL(data.website)) {
