@@ -18,6 +18,8 @@ import Footer from "../src/components/layout/Footer";
 import Login from "../src/components/auth/Login";
 import Register from "../src/components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
+import CreateProfile from "./components/create-profile/CreateProfile";
+
 import store from "../src/store";
 
 import PrivateRoute from "../src/components/common/PrivateRoute";
@@ -58,9 +60,10 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-
             </Switch>
-
+            <Switch>
+            <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+            </Switch>
           </div>
           <Footer />
         </div>
